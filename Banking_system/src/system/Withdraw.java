@@ -19,25 +19,28 @@ public class Withdraw extends JFrame {
         add(msg);
 
         JLabel acl = new JLabel("Enter Account no.:");
-        acl.setBounds(40, 30, 130, 30);
+        acl.setBounds(25, 30, 130, 30);
+        acl.setFont(new Font("Arial", Font.BOLD, 14));
         add(acl);
 
         JTextField ac = new JTextField();
         ac.setBounds(160, 30, 150, 30);
         add(ac);
 
-        String[] categories = {"PersonalCare", "Food & Groceries", "Restaurants", "Entertainment", "Bills and Insurance", "Travel & Vacation", "Home Improvements", "Rent"};
-        JLabel catl = new JLabel("Enter Categories :");
-        catl.setBounds(50, 70, 100, 30);
+        String[] categories = {"Personal Care", "Food & Groceries", "Restaurants", "Entertainment", "Bills and Insurance", "Travel & Vacation","Shopping", "Home Improvements", "Rent","Utilitiesd(electricity,water,gas,internet)","Healthcare","Education", "Travel & Vacation","Transportation", "Gifts & Insurance","Saving & Investment"};
+        JLabel catl = new JLabel("Spend on : ");
+        catl.setFont(new Font("Arial", Font.BOLD, 14));
+        catl.setBounds(80, 70, 100, 30);
         add(catl);
 
         JComboBox<String> cat = new JComboBox<>(categories);
-        cat.setBounds(160, 70, 150, 30);
-        cat.setFont(new Font("Arial", Font.BOLD, 15));
+        cat.setBounds(160, 70, 200, 30);
+        cat.setFont(new Font("Arial", Font.BOLD, 13));
         add(cat);
 
         JLabel aml = new JLabel("Enter amount :");
-        aml.setBounds(50, 110, 100, 30);
+        aml.setBounds(50, 110, 120, 30);
+        aml.setFont(new Font("Arial", Font.BOLD, 14));
         add(aml);
 
         JTextField am = new JTextField();
