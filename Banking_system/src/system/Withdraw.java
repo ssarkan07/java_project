@@ -55,6 +55,8 @@ public class Withdraw extends JFrame {
         btn.addActionListener(e -> {
             String num = ac.getText();
             String amount = am.getText().trim();
+            String categorie = (String) cat.getSelectedItem();
+            System.out.println(categorie);
             boolean found = false;
 
             if (num.isEmpty()) {
@@ -80,8 +82,8 @@ public class Withdraw extends JFrame {
                         String cell = columns[targetcolumn];
                         cell = cell.replaceAll("^\"|\"$", "").trim(); // removes surrounding quotes
                         if (num.equals(cell)) {
-                       
                             Pay p = new Pay(num,amount);
+                            UpdateRecord update = new UpdateRecord(num, amount, categorie);
                             p.setVisible(true);
                             found = true;
                             break;

@@ -58,12 +58,13 @@ public class Pay extends JFrame {
                     
                     if (columns.length > targetcolumn) {
                     	count++;
-                    	String userpass = columns[targetcolumn]; //user password column value save in 'userpss' variable one by one 
+                    	String userpass = AccountInfo.getAccountNumber(); //user password column value save in 'userpss' variable one by one 
                     	String tcell = columns[0]; // user account num column value save in 'tcell' variable one by one 
                     	userpass = userpass.replaceAll("^\"|\"$", "").trim(); // removes surrounding quotes
                     	tcell = tcell.replaceAll("^\"|\"$", "").trim(); // removes surrounding quotes                    	
+  
                     	if (passwordInput.equals(userpass) && num.equals(tcell)){
-                    		
+                    		msg.setText("Message :");
                     		System.out.println("program run successfully");
                     		found = true;
                     		UpdateCSV u = new UpdateCSV(amount,count);

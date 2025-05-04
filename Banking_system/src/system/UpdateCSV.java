@@ -10,7 +10,6 @@ public class UpdateCSV {
     UpdateCSV(String amount, int targetRow) {
         String filePath = "data.csv";
         List<String[]> allData = new ArrayList<>();
-        System.out.println(targetRow);
         try {
             // Step 1: Read CSV
             CSVReader reader = new CSVReader(new FileReader(filePath));
@@ -23,7 +22,13 @@ public class UpdateCSV {
             if (targetRow < allData.size()) {
                 String[] row = allData.get(targetRow);
                 if (targetCol < row.length) {
-                    row[targetCol] = amount;  // new value
+                	int int_amount = Integer.parseInt(amount);
+                	int targetCell = Integer.parseInt(row[targetCol]);
+                    int result = targetCell += int_amount;  // new value
+                    String resultStr  = String.valueOf(result);
+                    row[targetCol] = resultStr;
+                    AccountInfo.setAmount(int_amount);
+                   
                 }
             }
 
